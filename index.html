@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaudhary Jeans House</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+/* HOME INTRO FONT STYLE */
+#home h2{
+    font-family: Georgia, "Times New Roman", serif;
+    font-size:60px;
+    letter-spacing:2px;
+}
+
+#home h3{
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size:26px;
+    margin-top:15px;
+}
+
+#home p{
+    font-family: Verdana, Arial, sans-serif;
+    font-size:18px;
+    line-height:1.7;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0b0b0b;
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#111;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    z-index:1000;
+}
+nav h1{ color:#1da1f2; }
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav ul li a:hover{ color:#1da1f2; }
+
+section{ padding:100px 40px; }
+
+/* HOME */
+#home{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+    url("download6.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+}
+
+
+.btn{
+    padding:12px 30px;
+    background:#1da1f2;
+    border:none;
+    color:#fff;
+    cursor:pointer;
+    border-radius:4px;
+}
+.btn:hover{ background:#147dc2; }
+
+/* PRODUCTS */
+#products h2,
+#cart h2,
+#contact h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.product-card{
+    background:#141414;
+    padding:20px;
+    border-radius:6px;
+    text-align:center;
+    transition:0.3s;
+}
+.product-card:hover{ transform:translateY(-6px); }
+.product-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:4px;
+    margin-bottom:15px;
+}
+.product-card p{ color:#ccc; margin:8px 0; }
+
+/* CART */
+#cart-items{ max-width:700px; margin:auto; }
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #333;
+    padding:10px 0;
+}
+.cart-item button{
+    background:none;
+    border:none;
+    color:red;
+    cursor:pointer;
+}
+.total{
+    text-align:center;
+    margin-top:20px;
+    font-size:20px;
+}
+
+/* CONTACT */
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+input, textarea{
+    padding:10px;
+    border:none;
+    border-radius:4px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:#aaa;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    nav{ flex-direction:column; gap:10px; }
+}
+#products h2{
+    background: linear-gradient(135deg, #1da1f2, #0b3c5d);
+    padding: 15px 30px;
+    border-radius: 8px;
+    display: inline-block;
+}
+#cart{
+    display: none;
+}
+/* JEANS SLIDING GALLERY */
+.jeans-slider {
+    overflow: hidden;
+    margin-top: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111; /* dark bg */
+    padding: 10px 0;
+}
+
+.slider-track {
+    display: flex;
+    width: calc(300px * 12); /* total images, adjust if images added */
+    animation: scroll 20s linear infinite;
+}
+
+.slider-track img {
+    width: 300px;
+    height: 180px;
+    object-fit: cover;
+    margin: 0 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.slider-track img:hover {
+    transform: scale(1.1);
+}
+
+/* Sliding animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* scroll half of track, repeat images for smooth loop */
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .slider-track img{
+        width: 220px;
+        height: 140px;
+        margin: 0 8px;
+    }
+}
+
+@media(max-width: 480px){
+    .slider-track img{
+        width: 160px;
+        height: 120px;
+        margin: 0 5px;
+    }
+}
+/* ABOUT SECTION */
+/* ABOUT SECTION WITH BACKGROUND IMAGE */
+/* ABOUT SECTION */
+/* ABOUT SECTION WITH BACKGROUND IMAGE */
+#about{
+    padding:100px 40px;
+    color:#ddd;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url("download6.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+#about{
+    font-family: Georgia, "Times New Roman", serif;
+}
+#products{
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url("download6.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#contact{
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url("download6.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#contact form{
+    background: rgba(0,0,0,0.6);
+    padding:30px;
+    border-radius:12px;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.8),
+        inset 0 0 10px rgba(255,255,255,0.05);
+    transform: perspective(1000px) rotateX(4deg);
+    transition: 0.4s;
+}
+
+#contact form:hover{
+    transform: perspective(1000px) rotateX(0deg) scale(1.02);
+}
+/* ONLY SHOP INFO CHANGE */
+.shop-info{
+    text-align:left;
+    font-family:'Poppins', sans-serif;
+}
+
+/* icon + text one below another */
+.shop-info .info-line{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin:10px 0;
+    font-size:16px;
+}
+
+/* icons left side */
+.shop-info .info-line i{
+    min-width:24px;
+    font-size:18px;
+    color:#1da1f2;
+    margin-top:3px;
+}
+
+/* links */
+.shop-info .info-line a{
+    color:#1da1f2;
+    text-decoration:none;
+}
+
+/* social icons left aligned */
+.shop-info .social-links{
+    display:flex;
+    gap:16px;
+    margin-top:18px;
+    justify-content:flex-start;
+}
+/* ONLY text font change */
+.shop-info{
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+/* icons one below another */
+.shop-info .social-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+/* shop info text size + font */
+.shop-info{
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size:18px;
+    color:#fff;
+}
+
+/* icons black & white + size */
+.shop-info i{
+    font-size:22px;
+    color:#fff;       /* white icon */
+}
+
+/* social icons vertical */
+.shop-info .social-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+/* links text size */
+.shop-info a{
+    font-size:18px;
+    color:#fff;
+}
+/* shop info font + right shift + bg image */
+.shop-info{
+    font-family: 'Poppins', sans-serif;
+    font-size:18px;
+    padding-left:40px;                 /* right side shift */
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("download6.jpg");          /* image ka naam yaha */
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding:30px 30px 30px 60px;
+    border-radius:12px;
+}
+
+/* icon & text spacing same rahe */
+.shop-info i{
+    font-size:22px;
+    color:#fff;
+}
+
+.shop-info a{
+    color:#fff;
+    font-size:18px;
+}
+/* image under map */
+.map-image-box{
+    margin-top:30px;
+    height:260px;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("download6.jpg");   /* apni image ka naam */
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+}
+
+/* text on image */
+.map-image-box h3{
+    font-family:'Poppins', sans-serif;
+    font-size:26px;
+    color:#fff;
+    letter-spacing:1px;
+}
+
+.footer-slider{
+    width:100%;
+    overflow:hidden;
+    background:#000;
+    padding:14px 0;
+}
+
+.footer-track{
+    display:flex;
+    width:max-content;
+    animation: footerScroll 25s linear infinite;
+}
+
+.footer-item{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    padding-right:60px;
+}
+
+.footer-text{
+    font-family:'Poppins', 'Segoe UI', sans-serif;
+    font-size:18px;
+    color:#fff;
+    white-space:nowrap;
+}
+
+.footer-icons a{
+    font-size:22px;
+    color:#fff;
+    margin-right:12px;
+    text-decoration:none;
+}
+
+.footer-icons a:hover{
+    opacity:0.7;
+}
+
+@keyframes footerScroll{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}
+/* ================================
+   MOBILE RESPONSIVE (ANDROID)
+================================ */
+
+/* Tablets + Mobile */
+@media (max-width: 992px) {
+
+    nav {
+        padding: 12px 20px;
+    }
+
+    #home h2 {
+        font-size: 42px;
+    }
+
+    #home h3 {
+        font-size: 22px;
+    }
+
+    section {
+        padding: 90px 25px;
+    }
+}
+
+/* MOBILE PHONES */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Home section */
+    #home {
+        padding: 120px 20px;
+    }
+
+    #home h2 {
+        font-size: 34px;
+    }
+
+    #home h3 {
+        font-size: 20px;
+    }
+
+    #home p {
+        font-size: 16px;
+    }
+
+    /* Product grid */
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .product-card img {
+        height: 200px;
+    }
+
+    /* Cart */
+    .cart-item {
+        flex-direction: column;
+        gap: 5px;
+        text-align: left;
+    }
+
+    /* Contact form */
+    form {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    iframe {
+        height: 300px;
+    }
+}
+
+/* SMALL MOBILE (LOW-END ANDROID) */
+@media (max-width: 480px) {
+
+    #home h2 {
+        font-size: 28px;
+    }
+
+    #home h3 {
+        font-size: 18px;
+    }
+
+    #home p {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 10px 22px;
+        font-size: 14px;
+    }
+
+    .product-card {
+        padding: 15px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+nav h1{
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 26px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>Chaudhary Jeans House</h1>
+    <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="javascript:void(0)" onclick="openCart()">Cart</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section id="home">
+    <div>
+        <h2 style="font-size:60px; letter-spacing:2px;">
+            Welcome to <br>
+            <span style="color:#1da1f2;">Chaudhary Jeans House</span>
+        </h2>
+
+        <h3 style="font-size:26px; margin-top:15px;">
+            Premium Quality Jeans for Men
+        </h3>
+
+        <p style="font-size:18px; line-height:1.7; margin-top:25px;">
+            Chaudhary Jeans House is your one-stop destination for
+            <strong>premium denim jeans</strong>.
+            We deal in <strong>only jeans</strong> — no distractions, no compromise.
+            Our collection is designed for men who want
+            <strong>perfect fitting, long-lasting fabric, modern style</strong>
+            and <strong>all-day comfort</strong>.
+            From straight fit to slim fit and stretchable denim,
+            every jeans is crafted with high-quality material
+            to give you confidence in every step.
+        </p>
+
+        <button class="btn" style="margin-top:30px;"
+            onclick="document.getElementById('products').scrollIntoView()">
+            Shop Jeans Collection
+        </button>
+    </div>
+</section>
+<section id="about">
+    <h2 style="
+        text-align:center;
+        margin-bottom:40px;
+        background: linear-gradient(135deg, #1da1f2, #0b3c5d);
+        padding:15px 30px;
+        border-radius:8px;
+        display:inline-block;">
+        About Chaudhary Jeans House
+    </h2>
+
+    <div style="
+        max-width:1000px;
+        margin:auto;
+        text-align:center;
+        color:#ddd;
+        line-height:1.9;
+        font-size:18px;
+    ">
+        <p>
+            <strong>Chaudhary Jeans House</strong> ek men’s denim jeans website hai
+            jo sirf <strong>premium quality jeans</strong> par focus karti hai.
+            Ye website customers ko perfect fitting aur comfortable jeans
+            easily available karane ke liye banayi gayi hai.
+        </p>
+
+        <br>
+
+        <p>
+            Yahan users different types ke jeans dekh sakte hain jaise
+            Straight Fit, Slim Fit, Regular Fit aur Stretchable Denim.
+            Website ka design simple aur user-friendly hai
+            jisse shopping experience smooth rahe.
+        </p>
+
+        <!-- FOUNDER STORY -->
+        <h3 style="color:#1da1f2; margin-top:50px;">Founder & Shop Story</h3>
+        <p>
+            Chaudhary Jeans House ki shuruaat customers ko affordable price par
+            high-quality denim jeans dene ke vision ke saath hui.
+        </p>
+
+        <!-- REVIEWS -->
+        <h3 style="color:#1da1f2; margin-top:50px;">Customer Reviews</h3>
+        <p>⭐⭐⭐⭐⭐ Perfect fitting jeans – Rahul</p>
+        <p>⭐⭐⭐⭐⭐ Best quality denim – Aman</p>
+        <p>⭐⭐⭐⭐⭐ Comfortable & stylish – Mohit</p>
+
+        <!-- STORE INFO -->
+        <h3 style="color:#1da1f2; margin-top:50px;">Store Information</h3>
+        <p>📍 Delhi, India</p>
+        <p>⏰ 10:00 AM – 9:00 PM</p>
+        <p>📞 WhatsApp Support Available</p>
+
+    </div>
+</section>
+
+
+<section id="products">
+    <h2>Jeans Collection</h2>
+
+
+    <div class="product-grid">
+
+        <!-- ONLY JEANS IMAGES -->
+        <div class="product-card">
+            <img src="download.jpg7.jpg" alt="Jeans">
+            <h3>Straight Fit Jeans</h3>
+            <p>₹1299 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Straight Fit Jeans',1299)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="download.jpg6.jpg" alt="Jeans">
+            <h3>Slim Fit Jeans</h3>
+            <p>₹1499 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Slim Fit Jeans',1499)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="download.jpg5.jpg" alt="Jeans">
+            <h3>Regular Fit Jeans</h3>
+            <p>₹1199 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Regular Fit Jeans',1199)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="download.jpg4.webp" alt="Jeans">
+            <h3>Blue Denim Jeans</h3>
+            <p>₹1599 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Blue Denim Jeans',1599)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="download.jpg3.avif" alt="Jeans">
+            <h3>Black Denim Jeans</h3>
+            <p>₹1399 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Black Denim Jeans',1399)">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="download.jpg" alt="Jeans">
+            <h3>Stretchable Jeans</h3>
+            <p>₹1699 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Stretchable Jeans',1699)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="download.jpg4.webp" alt="Jeans">
+            <h3>Blue Denim Jeans</h3>
+            <p>₹1599 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Blue Denim Jeans',1599)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="download.jpg4.webp" alt="Jeans">
+            <h3>Blue Denim Jeans</h3>
+            <p>₹1599 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Blue Denim Jeans',1599)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="download.jpg4.webp" alt="Jeans">
+            <h3>Blue Denim Jeans</h3>
+            <p>₹1599 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Blue Denim Jeans',1599)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="download.jpg4.webp" alt="Jeans">
+            <h3>Blue Denim Jeans</h3>
+            <p>₹1599 | Size: 30–38</p>
+            <button class="btn" onclick="addToCart('Blue Denim Jeans',1599)">Add to Cart</button>
+        </div>
+
+    </div>
+    <!-- JEANS SLIDING GALLERY (UNDER COLLECTION IMAGES) -->
+<div class="jeans-slider">
+    <div class="slider-track">
+        <img src="download.jpg" alt="Jeans">
+        <img src="download.jpg3.avif" alt="Jeans">
+        <img src="download.jpg4.webp" alt="Jeans">
+        <img src="download.jpg5.jpg" alt="Jeans">
+        <img src="download.jpg6.jpg" alt="Jeans">
+        <img src="download.jpg7.jpg" alt="Jeans">
+
+        <!-- repeat for smooth sliding -->
+        <img src="download.jpg" alt="Jeans">
+        <img src="download.jpg3.avif" alt="Jeans">
+        <img src="download.jpg4.webp" alt="Jeans">
+        <img src="download.jpg5.jpg" alt="Jeans">
+        <img src="download.jpg6.jpg" alt="Jeans">
+        <img src="download.jpg7.jpg" alt="Jeans">
+    </div>
+</div>
+
+</section>
+<section id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="total" id="total-price">Total: ₹0</div>
+    <div style="text-align:center;margin-top:20px;">
+        <button class="btn">Buy Now</button>
+    </div>
+</section>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p style="text-align:center;margin-bottom:20px;">
+        Contact Chaudhary Jeans House for bulk or retail orders
+    </p>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+
+<input type="tel" placeholder="Mobile Number" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<input type="text" placeholder="Your Address">
+
+<textarea rows="4" placeholder="Your Message"></textarea>
+
+        <button class="btn" onclick="sendWhatsApp()">Submit</button>
+</form>
+</section>
+<!-- Google Map Embed -->
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14000.766849988704!2d77.26198945249509!3d28.683911260183855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfc86ff9bef55%3A0xcbded5c8a601dca7!2sWelcome!5e0!3m2!1sen!2sin!4v1770488687432!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ <div class="shop-info">
+
+    <div class="info-line">
+        <i class="fa-solid fa-shop"></i>
+        <span><strong>Chaudhary Jeans House</strong></span>
+    </div>
+
+    <div class="info-line">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>
+            Z2/191, Welcome, Near Firdaus Masjid,  
+            New Seelampur, Shahdara,  
+            New Delhi, Delhi – 110053
+        </span>
+    </div>
+
+    <div class="info-line">
+        <i class="fa-solid fa-user"></i>
+        <span>Owner: Chaudhary Ji</span>
+    </div>
+
+    <div class="info-line">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:9873741803">+91 98737 41803</a>
+    </div>
+
+    <div class="social-links">
+        <a href="https://www.instagram.com/ragibchoudhary2266_?igsh=dXVudm11eTdveWF2" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://github.com/Mohdshadab10320" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mohd-shadab-036820318?utm_source=share_via&utm_content=profile&utm_medium=member_android" title="LinkedIn Learning"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+</div>
+
+
+
+<footer>
+    <div class="footer-slider">
+    <div class="footer-track">
+        
+        <!-- first copy -->
+        <div class="footer-item">
+            <span class="footer-text">
+                I am Mohd Shadab | Web Developer & Data Science |
+                Jagdishpur, Babaganj, Amethi (UP) | 📞 7084831525
+            </span>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- second copy (repeat) -->
+        <div class="footer-item">
+            <span class="footer-text">
+                I am Mohd Shadab | Web Developer & Data Science |
+                Jagdishpur, Babaganj, Amethi (UP) | 📞 7084831525
+            </span>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+</footer>
+
+<script>
+let cart = [];
+function openCart(){
+    document.getElementById("cart").style.display = "block";
+    document.getElementById("cart").scrollIntoView({behavior:"smooth"});
+}
+
+
+function addToCart(name, price){
+    let item = cart.find(p => p.name === name);
+    if(item){ item.qty++; }
+    else{ cart.push({name, price, qty:1}); }
+    renderCart();
+}
+
+function removeItem(i){
+    cart.splice(i,1);
+    renderCart();
+}
+
+function renderCart(){
+    let box = document.getElementById("cart-items");
+    let totalBox = document.getElementById("total-price");
+    box.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item,i)=>{
+        total += item.price * item.qty;
+        box.innerHTML += `
+        <div class="cart-item">
+            <span>${item.name} (x${item.qty})</span>
+            <span>₹${item.price * item.qty}
+            <button onclick="removeItem(${i})">❌</button></span>
+        </div>`;
+    });
+
+    totalBox.innerText = "Total: ₹" + total;
+}
+function sendWhatsApp(){
+    let name = document.querySelector('#contact input[placeholder="Your Name"]').value;
+    let mobile = document.querySelector('#contact input[placeholder="Mobile Number"]').value;
+    let email = document.querySelector('#contact input[placeholder="Your Email"]').value;
+    let address = document.querySelector('#contact input[placeholder="Your Address"]').value;
+    let message = document.querySelector('#contact textarea').value;
+
+    if(!name || !mobile || !email || !message){
+        alert("Please fill all required fields!");
+        return;
+    }
+
+    let phone = "9873741803"; // apna WhatsApp number
+    let text =
+        `Name: ${name}%0A` +
+        `Mobile: ${mobile}%0A` +
+        `Email: ${email}%0A` +
+        `Address: ${address}%0A` +
+        `Message: ${message}`;
+
+    let url = `https://wa.me/${phone}?text=${text}`;
+    window.open(url, "_blank");
+}
+
+</script>
+
+</body>
+</html> 
